@@ -1,0 +1,309 @@
+.search-loader-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background-color: rgb(103, 103, 200);
+  animation: mainLoaderAnimation 4s ease infinite;
+  width: 200px;
+
+}
+
+@keyframes mainLoaderAnimation{
+    0%{
+        transform: scaleX(1);
+    }
+    25%{
+        transform: scaleX(0.83);
+    }
+    50%{
+        transform: scaleX(0.75);
+    }
+    75%{
+        transform: scaleX(0.66);
+    }
+    100%{
+        transform: scaleX(0.58);
+    }
+}
+
+/* Search Icon Animation */
+.search-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 30px;
+  position: relative;
+}
+
+.magnifying-glass {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  position: relative;
+  animation: searchPulse 2s ease-in-out infinite;
+}
+
+.magnifying-glass::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  background: #ffffff;
+  border-radius: 2px;
+  bottom: -10px;
+  right: -10px;
+  transform: rotate(45deg);
+  animation: handleWiggle 2s ease-in-out infinite;
+}
+
+/* Search Waves */
+.search-waves {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wave {
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  animation: waveExpand 2s ease-out infinite;
+}
+
+.wave:nth-child(1) {
+  animation-delay: 0s;
+}
+.wave:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.wave:nth-child(3) {
+  animation-delay: 1s;
+}
+
+/* Typing Dots */
+.typing-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.typing-dot {
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: typingBounce 1.4s ease-in-out infinite;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Status Text */
+.status-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  animation: textFade 3s ease-in-out infinite;
+}
+
+.sub-text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* Progress Ring */
+.progress-ring {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.progress-circle {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.progress-bar-path {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  animation: progressRing 4s ease-in-out infinite;
+}
+
+/* Network Activity Indicator */
+.network-dots {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 20px;
+}
+
+.network-dot {
+  width: 6px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  animation: networkActivity 1.2s ease-in-out infinite;
+}
+
+.network-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.network-dot:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.network-dot:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.network-dot:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.network-dot:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+
+/* Animations */
+@keyframes searchPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes handleWiggle {
+  0%,
+  100% {
+    transform: rotate(45deg);
+  }
+  25% {
+    transform: rotate(40deg);
+  }
+  75% {
+    transform: rotate(50deg);
+  }
+}
+
+@keyframes waveExpand {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes typingBounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+@keyframes textFade {
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes progressRing {
+  0% {
+    stroke-dashoffset: 283;
+  }
+  50% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes networkActivity {
+  0%,
+  100% {
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    height: 35px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-loader-container {
+    padding: 30px 20px;
+    margin: 20px;
+  }
+
+  .search-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .magnifying-glass {
+    width: 40px;
+    height: 40px;
+  }
+
+  .status-text {
+    font-size: 16px;
+  }
+
+  .progress-ring {
+    width: 100px;
+    height: 100px;
+  }
+}
