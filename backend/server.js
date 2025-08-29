@@ -20,6 +20,6 @@ app.use(cors());
 app.use("/api", AIRoute);
 
 
-app.listen(4000, (req, res) =>{
+app.listen(process.env.PORT ||4000, (req, res) =>{
     console.log("server is running on 4000 port");
 })
