@@ -23,4 +23,5 @@ const port = process.env.PORT ||4001;
 
 app.listen(port, (req, res) =>{
     console.log("server is running on 4001 port");
+    res.send("Server is running on 4001 port");
 })
