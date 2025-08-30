@@ -13,7 +13,7 @@ import { storeContext } from "../../StoreContext/StoreContext";
 const Search = () => {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
-  const {response, setResponse, setToken} = useContext(storeContext)
+  const {response, setResponse, setToken, url} = useContext(storeContext)
 
 
 
@@ -41,7 +41,7 @@ const Search = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const result = await axios.post("http://localhost:4000/api/response", {
+      const result = await axios.post(`${url}/response`, {
         search,
       });
       setResponse((prev) => [
