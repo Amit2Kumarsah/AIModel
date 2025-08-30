@@ -8,7 +8,7 @@ const StoreContextProvider = (props) =>{
     const [response, setResponse] = useState([]);
 
 
-    const url = "http://localhost:4000/api";
+    const url = "https://aimodel-backe.onrender.com/api";
 
     
     useEffect( () =>{
