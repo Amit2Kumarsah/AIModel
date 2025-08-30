@@ -19,7 +19,8 @@ app.use(cors());
 
 app.use("/api", AIRoute);
 
+const port = process.env.PORT ||4001;
 
-app.listen(process.env.PORT ||4000, (req, res) =>{
-    console.log("server is running on 4000 port");
+app.listen(port, (req, res) =>{
+    console.log("server is running on 4001 port");
 })
